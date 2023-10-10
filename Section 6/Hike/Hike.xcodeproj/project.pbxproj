@@ -10,6 +10,7 @@
 		325E0F942ACFA4E500D71935 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325E0F932ACFA4E500D71935 /* CardView.swift */; };
 		325E0F972ACFA7DC00D71935 /* CustomBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325E0F962ACFA7DC00D71935 /* CustomBackgroundView.swift */; };
 		325E0F9A2AD4F8FD00D71935 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325E0F992AD4F8FD00D71935 /* ColorExtension.swift */; };
+		325E0F9C2AD526ED00D71935 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325E0F9B2AD526ED00D71935 /* CustomButtonView.swift */; };
 		32A007932ACE82F9003E895A /* HikeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A007922ACE82F9003E895A /* HikeApp.swift */; };
 		32A007952ACE82F9003E895A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A007942ACE82F9003E895A /* ContentView.swift */; };
 		32A007972ACE82FB003E895A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32A007962ACE82FB003E895A /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		325E0F932ACFA4E500D71935 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		325E0F962ACFA7DC00D71935 /* CustomBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackgroundView.swift; sourceTree = "<group>"; };
 		325E0F992AD4F8FD00D71935 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		325E0F9B2AD526ED00D71935 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomButtonView.swift; path = ../../../../../../../../../CustomButtonView.swift; sourceTree = "<group>"; };
 		32A0078F2ACE82F9003E895A /* Hike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A007922ACE82F9003E895A /* HikeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeApp.swift; sourceTree = "<group>"; };
 		32A007942ACE82F9003E895A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				325E0F992AD4F8FD00D71935 /* ColorExtension.swift */,
+				325E0F9B2AD526ED00D71935 /* CustomButtonView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				32A007952ACE82F9003E895A /* ContentView.swift in Sources */,
 				325E0F942ACFA4E500D71935 /* CardView.swift in Sources */,
 				32A007932ACE82F9003E895A /* HikeApp.swift in Sources */,
+				325E0F9C2AD526ED00D71935 /* CustomButtonView.swift in Sources */,
 				325E0F972ACFA7DC00D71935 /* CustomBackgroundView.swift in Sources */,
 				325E0F9A2AD4F8FD00D71935 /* ColorExtension.swift in Sources */,
 			);
