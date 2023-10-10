@@ -1,4 +1,8 @@
 #delete DS_Store
 
 .DS_Store
+<<<<<<< HEAD
 *.xcuserstate
+=======
+*.xcuserstate
+>>>>>>> develop
