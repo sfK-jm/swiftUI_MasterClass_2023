@@ -27,6 +27,7 @@ struct ContentView: View {
                     .padding()
                     .shadow(color: .black.opacity(0.2), radius: 12, x: 2, y: 2)
                     .opacity(isAnimating ? 1 : 0)
+                    // 화면배율
                     .scaleEffect(imageScale)
                 
                 // MARK: - 1. TAP GESTURE
@@ -48,6 +49,7 @@ struct ContentView: View {
             .onAppear(perform: {
                 withAnimation(.linear(duration: 1)){
                     isAnimating = true
+                    
                 }
             })
             
