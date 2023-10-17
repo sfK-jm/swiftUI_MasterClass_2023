@@ -39,7 +39,7 @@ struct ContentView: View {
                     .shadow(color: .black.opacity(0.2), radius: 12, x: 2, y: 2)
                     .opacity(isAnimating ? 1 : 0)
                     .offset(x: imageOffset.width, y: imageOffset.height)
-                    // 화면배율조정
+                // 화면배율조정
                     .scaleEffect(imageScale)
                 
                 // MARK: - 1. TAP GESTURE
@@ -85,6 +85,59 @@ struct ContentView: View {
                 , alignment: .top
             )
             
+            // MARK: - CONTROLS
+            .overlay(
+                Group{
+                    HStack{
+                        // SCALE DOWM
+                        Button {
+                            withAnimation(.spring()){
+                                if imageScale > 1{
+                                    imageScale -= 1
+                                    
+                                    // 예방 조치
+                                    if imageScale <= 1 {
+                                        resetImageState()
+                                    }
+                                }
+                            }
+                            
+                        } label: {
+                            ControlImageView(icon: "minus.magnifyingglass")
+                        }
+                        
+                        // RESET
+                        Button {
+                            resetImageState()
+                        } label: {
+                            ControlImageView(icon: "arrow.up.left.and.down.right.magnifyingglass")
+                        }
+                        
+                        // SCALE UP
+                        Button {
+                            if imageScale < 5{
+                                imageScale += 1
+                                
+                                if imageScale >= 5{
+                                    imageScale = 5
+                                }
+                            }
+                            
+                        } label: {
+                            ControlImageView(icon: "plus.magnifyingglass")
+                        }
+                        
+                        
+                    } //: CONTROLS
+                    .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(12)
+                    .opacity(isAnimating ? 1 : 0)
+                    
+                } //: GROUP
+                
+                    .padding(.bottom), alignment: .bottom
+            )
             
         } //: NAVIGATIONSTACK
         .navigationViewStyle(.stack)
