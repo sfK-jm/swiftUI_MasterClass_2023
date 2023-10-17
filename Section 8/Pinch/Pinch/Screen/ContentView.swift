@@ -28,6 +28,8 @@ struct ContentView: View {
     var body: some View {
         NavigationStack(){
             ZStack(){
+                Color.clear
+                
                 // MARK: - PAGE IMAGE
                 Image("magazine-front-cover")
                     .resizable()
@@ -65,7 +67,6 @@ struct ContentView: View {
                                 }
                             }
                     )
-                
             } //: ZSTACK
             .navigationTitle("Pinch & Zoom")
             .navigationBarTitleDisplayMode(.inline)
@@ -76,8 +77,17 @@ struct ContentView: View {
                 }
             })
             
+            // MARK: - INFO PANEL
+            .overlay(
+                InfoPaneView(scalse: imageScale, offset: imageOffset)
+                    .padding(.horizontal)
+                    .padding(.top, 30)
+                , alignment: .top
+            )
+            
+            
         } //: NAVIGATIONSTACK
-        
+        .navigationViewStyle(.stack)
     }
 }
 
