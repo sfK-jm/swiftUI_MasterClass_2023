@@ -13,6 +13,10 @@ struct ContentView: View {
     @State private var isAnimating: Bool = false
     @State private var imageScale: CGFloat = 1
     @State private var imageOffset: CGSize = .zero
+    @State private var isDrawerOpen:Bool = false
+    
+    let pages: [Page] = pagesData
+    @State private var pageIndex: Int = 0
     
     // MARK: - FUNCTION
     
@@ -31,7 +35,7 @@ struct ContentView: View {
                 Color.clear
                 
                 // MARK: - PAGE IMAGE
-                Image("magazine-front-cover")
+                Image(pages[pageIndex].imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(10)
@@ -65,6 +69,28 @@ struct ContentView: View {
                                 if imageScale <= 1{
                                     resetImageState()
                                 }
+                            }
+                    )
+                // MARK: - 3. Magnification
+                    .gesture(
+                        MagnificationGesture()
+                            .onChanged{ value in
+                                withAnimation(.linear(duration: 1)){
+                                    if imageScale >= 1 && imageScale <= 5{
+                                        imageScale = value
+                                    } else if imageScale > 5 {
+                                        imageScale = 5
+                                    }
+                                    
+                                }
+                            }
+                            .onEnded(){ _ in
+                                if imageScale > 5{
+                                    imageScale = 5
+                                } else if imageScale <= 1{
+                                    resetImageState()
+                                }
+                                
                             }
                     )
             } //: ZSTACK
@@ -137,6 +163,52 @@ struct ContentView: View {
                 } //: GROUP
                 
                     .padding(.bottom), alignment: .bottom
+            ) //: OVERLAY CONTROLS
+            
+            
+            // MARK: - DRAWER
+            .overlay(
+                HStack(spacing: 12){
+                    // MARK: - DWARER HANDLE
+                    Image(systemName: isDrawerOpen ?
+                          "chevron.compact.right" : "chevron.compact.left")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 40)
+                        .padding(8)
+                        .foregroundStyle(.secondary)
+                        .onTapGesture(perform: {
+                            withAnimation(.easeOut){
+                                isDrawerOpen.toggle()
+                            }
+                        })
+                    
+                    // MARK: - THUMBNAILS
+                    ForEach(pages) { item in
+                        Image(item.thumbnailName)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80)
+                            .cornerRadius(8)
+                            .shadow(radius: 4)
+                            .opacity(isDrawerOpen ? 1 : 0)
+                            .animation(.easeOut(duration: 0.5), value: isDrawerOpen)
+                            .onTapGesture(perform: {
+                                isAnimating = true
+                                pageIndex = item.id
+                            })
+                    }
+                    
+                    Spacer()
+                }
+                    .padding(EdgeInsets(top: 16, leading: 8, bottom: 16, trailing: 8))
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(12)
+                    .opacity(isAnimating ? 1 : 0)
+                    .frame(width: 260)
+                    .offset(x: isDrawerOpen ? 20 : 215)
+                    .padding(.top, UIScreen.main.bounds.height / 12)
+                    , alignment: .topTrailing
             )
             
         } //: NAVIGATIONSTACK
