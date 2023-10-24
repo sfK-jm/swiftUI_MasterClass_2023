@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct FruitHeaderView: View {
-    // MARK: - PROPERTY
     
+    // MARK: - PROPERTY
     var fruit: Fruit
     @State private var isAnimatingImage: Bool = false
     
