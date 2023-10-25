@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     // MARK: - PROPERTIES
-    
+    @State private var isShowingSettings: Bool = false
     var fruits: [Fruit] = fruitsData
     
     // MARK: - BODY
@@ -24,6 +24,18 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Fruits")
+            .toolbar{
+                Button(action: {
+                    isShowingSettings = true
+                }, label: {Image(
+                    systemName: "slider.horizontal.3"
+                )}) //: TOOLBAR BUTTON
+                
+                .sheet(isPresented: $isShowingSettings, content: {
+                    SettingsView()
+                })
+            } //: TOOLBAR
+            
         } //: NAVIGATION
     }
 }
