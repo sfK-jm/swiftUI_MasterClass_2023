@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    // MARK: - PROPERTIES
+    
+    // MARK: - BODY
     var body: some View {
-        VStack {
-            Text("content")
-        }
-        .padding()
+        NavigationView{
+            List{
+                CoverImageView()
+                    .frame(height: 300)
+                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+            } //: LISt
+            .navigationBarTitle("Africa", displayMode: .large)
+        } //: NAVIGATION
     }
 }
 
