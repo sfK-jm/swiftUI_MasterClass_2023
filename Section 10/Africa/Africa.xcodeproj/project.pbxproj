@@ -39,6 +39,7 @@
 		326C16642AEBDC6500A131B6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326C16632AEBDC6500A131B6 /* MapView.swift */; };
 		326C16662AEBDC8200A131B6 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326C16652AEBDC8200A131B6 /* GalleryView.swift */; };
 		326C16682AEBDC8F00A131B6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326C16672AEBDC8F00A131B6 /* MainView.swift */; };
+		3278718F2AF7CECF0046982D /* MapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3278718E2AF7CECF0046982D /* MapAnnotationView.swift */; };
 		3296F0CF2AF7AA4D007230C8 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296F0CE2AF7AA4D007230C8 /* LocationModel.swift */; };
 		32BD5C2E2AF084D30058F8C9 /* CoverImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BD5C2D2AF084D30058F8C9 /* CoverImageView.swift */; };
 		32BD5C312AF0A9020058F8C9 /* CoverImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BD5C302AF0A9020058F8C9 /* CoverImageModel.swift */; };
@@ -82,6 +83,7 @@
 		326C16632AEBDC6500A131B6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		326C16652AEBDC8200A131B6 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		326C16672AEBDC8F00A131B6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		3278718E2AF7CECF0046982D /* MapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationView.swift; sourceTree = "<group>"; };
 		3296F0CE2AF7AA4D007230C8 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		32BD5C2D2AF084D30058F8C9 /* CoverImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverImageView.swift; sourceTree = "<group>"; };
 		32BD5C302AF0A9020058F8C9 /* CoverImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverImageModel.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				3251F2842AF4C4070032920D /* ExternalWeblinkView.swift */,
 				3251F2882AF4CBC40032920D /* VideoListItemView.swift */,
 				322F4A702AF6607C00ED45BA /* VideoPlayerView.swift */,
+				3278718E2AF7CECF0046982D /* MapAnnotationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				322F4A742AF6636000ED45BA /* VideoPlayerHelper.swift in Sources */,
 				326C16642AEBDC6500A131B6 /* MapView.swift in Sources */,
 				3251F2832AF487620032920D /* InsetMapView.swift in Sources */,
+				3278718F2AF7CECF0046982D /* MapAnnotationView.swift in Sources */,
 				326C16342AEBD91D00A131B6 /* AfricaApp.swift in Sources */,
 				326C16622AEBDC4900A131B6 /* VideoListView.swift in Sources */,
 				3251F2872AF4CB4A0032920D /* VideoModel.swift in Sources */,
@@ -475,6 +479,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -505,6 +510,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

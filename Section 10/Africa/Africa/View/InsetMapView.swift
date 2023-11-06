@@ -11,9 +11,17 @@ import MapKit
 struct InsetMapView: View {
     // MARK: - PROPERTY
     
-    // ios 이전 버전
+    // ios 17 이전 버전
     
-//    @State private var cameraPosition = MKCoordinateRegion(
+    @State private var cameraPosition = MKCoordinateRegion(
+
+    center: CLLocationCoordinate2D(latitude: 6.600286, longitude: 16.4377599), // initial location
+
+    span: MKCoordinateSpan(latitudeDelta: 60.0, longitudeDelta: 60.0) // initial zoom
+    )
+    
+    // ios17 이후 버전
+//    @State private var cameraPosition = MapCameraPosition.region(MKCoordinateRegion(
 //
 //    center: CLLocationCoordinate2D(latitude: 6.600286, longitude: 16.4377599), // initial location
 //
@@ -21,19 +29,11 @@ struct InsetMapView: View {
 //
 //    ))
     
-    @State private var cameraPosition = MapCameraPosition.region(MKCoordinateRegion(
-
-    center: CLLocationCoordinate2D(latitude: 6.600286, longitude: 16.4377599), // initial location
-
-    span: MKCoordinateSpan(latitudeDelta: 60.0, longitudeDelta: 60.0) // initial zoom
-
-    ))
-    
     var body: some View {
         // ios17 이전
         //Map(coordinateRegion: $cameraPosition)
         
-        Map(position: $cameraPosition)
+        Map(coordinateRegion: $cameraPosition)
             .overlay(
                 NavigationLink(destination: MapView()){
                     HStack{
