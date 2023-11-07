@@ -80,7 +80,6 @@ struct GalleryView: View {
                 .onAppear(perform: {
                     withAnimation(.easeIn(duration: 0.5)){
                         gridSwitch()
-
                     }
                 })
             } //: VSTACK
