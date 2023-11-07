@@ -40,6 +40,7 @@
 		326C16662AEBDC8200A131B6 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326C16652AEBDC8200A131B6 /* GalleryView.swift */; };
 		326C16682AEBDC8F00A131B6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326C16672AEBDC8F00A131B6 /* MainView.swift */; };
 		3278718F2AF7CECF0046982D /* MapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3278718E2AF7CECF0046982D /* MapAnnotationView.swift */; };
+		327B8A852AFA1020001DACE4 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B8A842AFA1020001DACE4 /* CreditsView.swift */; };
 		3296F0CF2AF7AA4D007230C8 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296F0CE2AF7AA4D007230C8 /* LocationModel.swift */; };
 		32BD5C2E2AF084D30058F8C9 /* CoverImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BD5C2D2AF084D30058F8C9 /* CoverImageView.swift */; };
 		32BD5C312AF0A9020058F8C9 /* CoverImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BD5C302AF0A9020058F8C9 /* CoverImageModel.swift */; };
@@ -49,6 +50,19 @@
 		32F2A0962AF88DCD005DB69E /* MotionAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2A0952AF88DCD005DB69E /* MotionAnimationView.swift */; };
 		32F2A0982AF9E9A9005DB69E /* AnimalGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2A0972AF9E9A9005DB69E /* AnimalGridItemView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		327B8A732AFA0734001DACE4 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		322F4A702AF6607C00ED45BA /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
@@ -86,6 +100,7 @@
 		326C16652AEBDC8200A131B6 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		326C16672AEBDC8F00A131B6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3278718E2AF7CECF0046982D /* MapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationView.swift; sourceTree = "<group>"; };
+		327B8A842AFA1020001DACE4 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		3296F0CE2AF7AA4D007230C8 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		32BD5C2D2AF084D30058F8C9 /* CoverImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverImageView.swift; sourceTree = "<group>"; };
 		32BD5C302AF0A9020058F8C9 /* CoverImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverImageModel.swift; sourceTree = "<group>"; };
@@ -213,6 +228,7 @@
 				3278718E2AF7CECF0046982D /* MapAnnotationView.swift */,
 				32F2A0952AF88DCD005DB69E /* MotionAnimationView.swift */,
 				32F2A0972AF9E9A9005DB69E /* AnimalGridItemView.swift */,
+				327B8A842AFA1020001DACE4 /* CreditsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,6 +262,7 @@
 				326C162C2AEBD91D00A131B6 /* Sources */,
 				326C162D2AEBD91D00A131B6 /* Frameworks */,
 				326C162E2AEBD91D00A131B6 /* Resources */,
+				327B8A732AFA0734001DACE4 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -341,6 +358,7 @@
 				32F2A0982AF9E9A9005DB69E /* AnimalGridItemView.swift in Sources */,
 				326C16662AEBDC8200A131B6 /* GalleryView.swift in Sources */,
 				3251F27F2AF372B20032920D /* InsetGalleryView.swift in Sources */,
+				327B8A852AFA1020001DACE4 /* CreditsView.swift in Sources */,
 				32BD5C342AF0B20A0058F8C9 /* CodableBundleExtension.swift in Sources */,
 				32F2A0962AF88DCD005DB69E /* MotionAnimationView.swift in Sources */,
 				3251F27D2AF36E350032920D /* HeadingView.swift in Sources */,
@@ -495,6 +513,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sfK.Africa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -526,6 +547,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sfK.Africa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
