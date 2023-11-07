@@ -186,11 +186,11 @@
 			isa = PBXGroup;
 			children = (
 				326C16332AEBD91D00A131B6 /* AfricaApp.swift */,
-				326C16352AEBD91D00A131B6 /* ContentView.swift */,
-				326C16652AEBDC8200A131B6 /* GalleryView.swift */,
 				326C16672AEBDC8F00A131B6 /* MainView.swift */,
-				326C16632AEBDC6500A131B6 /* MapView.swift */,
+				326C16352AEBD91D00A131B6 /* ContentView.swift */,
 				326C16612AEBDC4900A131B6 /* VideoListView.swift */,
+				326C16632AEBDC6500A131B6 /* MapView.swift */,
+				326C16652AEBDC8200A131B6 /* GalleryView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
