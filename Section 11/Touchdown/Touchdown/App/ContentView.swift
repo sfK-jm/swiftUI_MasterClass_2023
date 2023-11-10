@@ -21,16 +21,24 @@ struct ContentView: View {
                         .padding(.bottom)
                         .padding(.top, geometry.safeAreaInsets.top)
                         .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 5)
+                                        
+                    ScrollView(.vertical, showsIndicators: false, content: {
+                        VStack(spacing: 0){
+                            FeaturedTabView()
+                                .frame(height: UIScreen.main.bounds.width / 1.475)
+                                .padding(.vertical, 20)
+                            
+                            FooterView()
+                                .padding(.horizontal)
+                        } //: VSTACK
+                    }) //: SCROLLVIEW
                     
-                    Spacer()
-                    
-                    FooterView()
-                        .padding(.horizontal)
+                   
                 } //: VSTACK
                 .background(colorBackground.ignoresSafeArea(.all, edges: .all))
             } //: ZSTACK
             .ignoresSafeArea(.all, edges: .top)
-        }
+        } //: GEOMETRY
     }
 }
 
