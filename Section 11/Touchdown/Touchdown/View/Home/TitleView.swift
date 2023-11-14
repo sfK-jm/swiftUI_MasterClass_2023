@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct TitleView: View {
-    
+    // MARK: - PROPERTY
     var title: String
     
+    // MARK: - BODY
     var body: some View {
         HStack {
             Text(title)

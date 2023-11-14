@@ -13,7 +13,7 @@ struct BrandGridView: View {
             LazyHGrid(rows: gridLayout, spacing: columnSpacing, content: {
                 ForEach(brands) { brand in
                         BrandItemView(brand: brand)
-                }
+                } //: LOOP
             }) //: GRID
             .frame(height: 200)
             .padding(15)

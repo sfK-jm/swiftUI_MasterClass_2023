@@ -19,6 +19,8 @@ struct NavigationBarView: View {
                     .font(.title)
                     .foregroundColor(.black)
             }) //: BUTTON
+            
+            // 여백
             Spacer()
             
             LogoView()
@@ -30,6 +32,7 @@ struct NavigationBarView: View {
                     }
                 })
             
+            // 여백
             Spacer()
             
             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {

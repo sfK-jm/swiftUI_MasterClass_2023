@@ -10,6 +10,8 @@ import SwiftUI
 struct BrandItemView: View {
     // MARK: - PROPERTY
     let brand: Brand
+    
+    // MARK: - BODY
     var body: some View {
         Image(brand.image)
             .resizable()
@@ -19,7 +21,8 @@ struct BrandItemView: View {
                 Color.white.cornerRadius(12)
             )
             .background(
-                RoundedRectangle(cornerRadius: 12).stroke(Color.gray, lineWidth: 1)
+                RoundedRectangle(cornerRadius: 12).stroke(
+                    Color.gray, lineWidth: 1)
             )
     }
 }

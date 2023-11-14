@@ -10,8 +10,12 @@ import SwiftUI
 struct CategoryGridView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            LazyHGrid(rows: gridLayout, alignment: .center, spacing: columnSpacing, pinnedViews: [], content: {
-                Section(
+            LazyHGrid(
+                rows: gridLayout,
+                alignment: .center,
+                spacing: columnSpacing,
+                pinnedViews: [],
+                content: { Section (
                     header: SectionView(rotateClockwise: false),
                     footer: SectionView(rotateClockwise: true)
                 ) {
