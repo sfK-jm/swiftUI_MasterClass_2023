@@ -17,6 +17,7 @@
 		326711C12B044FB8008052D9 /* sound-tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 326711BE2B044FB8008052D9 /* sound-tap.mp3 */; };
 		326711C22B044FB8008052D9 /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 326711BF2B044FB8008052D9 /* sound-rise.mp3 */; };
 		326711CF2B045E56008052D9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326711CE2B045E56008052D9 /* Constant.swift */; };
+		326711D12B073B3A008052D9 /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326711D02B073B3A008052D9 /* HideKeyboardExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		326711BF2B044FB8008052D9 /* sound-rise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-rise.mp3"; sourceTree = "<group>"; };
 		326711C92B045093008052D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		326711CE2B045E56008052D9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		326711D02B073B3A008052D9 /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		326711C72B045018008052D9 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				326711D02B073B3A008052D9 /* HideKeyboardExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			files = (
 				326711B42B044F65008052D9 /* Persistence.swift in Sources */,
 				326711AD2B044F64008052D9 /* ContentView.swift in Sources */,
+				326711D12B073B3A008052D9 /* HideKeyboardExtension.swift in Sources */,
 				326711CF2B045E56008052D9 /* Constant.swift in Sources */,
 				326711B72B044F65008052D9 /* Devote.xcdatamodeld in Sources */,
 				326711AB2B044F64008052D9 /* DevoteApp.swift in Sources */,

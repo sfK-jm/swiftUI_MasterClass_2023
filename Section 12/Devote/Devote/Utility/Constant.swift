@@ -5,7 +5,7 @@
 //  Created by 성준모 on 11/15/23.
 //
 
-import Foundation
+import SwiftUI
 
 // MARK: - FORMATTER
 let itemFormatter: DateFormatter = {
@@ -15,6 +15,8 @@ let itemFormatter: DateFormatter = {
     return formatter
 }()
 
+// MARK: - UI
+
 // MARK: - UX
 
-// MARK: - UI
+

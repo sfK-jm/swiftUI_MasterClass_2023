@@ -8,10 +8,14 @@
 import CoreData
 
 struct PersistenceController {
-    // MARK: - 1. PRESISTENCE CONTROLLER
+    // MARK: - 1. PERSISTENCE(지속성) CONTROLLER
     static let shared = PersistenceController()
 
     // MARK: - 2. PERSISTENCE CONTAINER
+    // NSPersistentContainer는 Core Data에서 정보를 저장하고,
+    // 검색하는 것을 용이케 하는 개체들의 집합
+    
+    //NSPersistentContainer는 상태를 관리하는 객체와 Data Model을 나타내는 객체등을 포함
     let container: NSPersistentContainer
 
     // MARK: - 3. INITIALZATION (load the presistence store)
@@ -32,9 +36,12 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
+        for i in 0..<5 {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
+            newItem.task = "Sample task NO\(i)"
+            newItem.completion = false
+            newItem.id = UUID()
         }
         do {
             try viewContext.save()
