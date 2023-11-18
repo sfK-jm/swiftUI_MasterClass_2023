@@ -63,61 +63,74 @@ struct ContentView: View {
     // MARK: - BODY
     var body: some View {
         NavigationView {
-            VStack {
-                VStack(spacing: 16){
-                    TextField("New Task", text: $task)
+            ZStack {
+                VStack {
+                    VStack(spacing: 16){
+                        TextField("New Task", text: $task)
+                            .padding()
+                            .background(
+                                Color(UIColor.systemGray6)
+                            )
+                            .cornerRadius(10)
+                            .focused($nameIsFocused)
+                        
+                        Button(action: {
+                            addItem()
+                            nameIsFocused = false
+                        }, label: {
+                            Spacer()
+                            Text("Save")
+                            Spacer()
+                        })
+                        .disabled(isButtonDisable)
                         .padding()
+                        .font(.headline)
+                        .foregroundColor(.white)
                         .background(
-                            Color(UIColor.systemGray6)
+                            Color(isButtonDisable ? Color.gray : Color.pink)
                         )
                         .cornerRadius(10)
-                        .focused($nameIsFocused)
+                        
+                    } //: VSTACK
+                    .padding(10)
                     
-                    Button(action: {
-                        addItem()
-                        nameIsFocused = false
-                    }, label: {
-                        Spacer()
-                        Text("Save")
-                        Spacer()
-                    })
-                    .disabled(isButtonDisable)
-                    .padding()
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .background(
-                        Color(isButtonDisable ? Color.gray : Color.pink)
-                    )
-                    .cornerRadius(10)
-                    
-                } //: VSTACK
-                .padding(10)
-                
-                List {
-                    ForEach(items) { item in
-                        VStack(alignment: .leading){
-                            Text(item.task ?? "")
-                                .font(.headline)
-                                .fontWeight(.bold)
-                            
-                            Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                                .font(.footnote)
-                                .foregroundColor(.gray)
+                    List {
+                        ForEach(items) { item in
+                            VStack(alignment: .leading){
+                                Text(item.task ?? "")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                
+                                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                                    .font(.footnote)
+                                    .foregroundColor(.gray)
+                            }
                         }
-                    }
-                    .onDelete(perform: deleteItems)
-                } //: LIST
-            } //: VSTACK
+                        .onDelete(perform: deleteItems)
+                    } //: LIST
+                    .listStyle(InsetGroupedListStyle())
+                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.3), radius: 12)
+                    .padding(.vertical, 0)
+                    .frame(maxWidth: 640)
+                } //: VSTACK
+            } //: ZSTACK
+            // iOS 16이상에서의 리스트 배경 지우는법
+            .scrollContentBackground(.hidden)
             .navigationTitle("Daily Tasks")
             .toolbarTitleDisplayMode(.large)
-            
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
-                } //: EDIT BUTTON
+                }
             } //: TOOLBAR
-            Text("Select an item")
+            .background(
+                BackgroundImageView()
+            )
+            .background(
+                backgroundGradient.ignoresSafeArea(.all)
+            )
         } //: NAVIGATION
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     
