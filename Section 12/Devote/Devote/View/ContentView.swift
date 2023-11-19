@@ -11,13 +11,7 @@ import CoreData
 struct ContentView: View {
     // MARK: -  PROPERTY
     @State var task: String = ""
-    // save저장 버튼을 눌렀을때 텍스트필드를 없애기 위해 사용하는 변수
-    @FocusState private var nameIsFocused: Bool
-    
-    // 버튼 사용을 금지를 위해 제어하는 변수
-    private var isButtonDisable: Bool {
-        task.isEmpty
-    }
+    @State private var showNewTaskItem: Bool = false
     
     // FETCHING DATA
     @Environment(\.managedObjectContext) private var viewContext
@@ -29,22 +23,7 @@ struct ContentView: View {
     
     
     // MARK: - FUNCTION
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-            newItem.task = task
-            newItem.completion = false
-            newItem.id = UUID()
-            
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    } //: ADDITEM
+
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
@@ -64,36 +43,31 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                // MARK: - MAIN VIEW
                 VStack {
-                    VStack(spacing: 16){
-                        TextField("New Task", text: $task)
-                            .padding()
-                            .background(
-                                Color(UIColor.systemGray6)
-                            )
-                            .cornerRadius(10)
-                            .focused($nameIsFocused)
-                        
-                        Button(action: {
-                            addItem()
-                            nameIsFocused = false
-                        }, label: {
-                            Spacer()
-                            Text("Save")
-                            Spacer()
-                        })
-                        .disabled(isButtonDisable)
-                        .padding()
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .background(
-                            Color(isButtonDisable ? Color.gray : Color.pink)
-                        )
-                        .cornerRadius(10)
-                        
-                    } //: VSTACK
-                    .padding(10)
+                    // MARK: - HEADER
+                    Spacer(minLength: 80)
                     
+                    // MARK: - NEW TASK BUTTON
+                    Button(action: {
+                        showNewTaskItem = true
+                    }, label: {
+                        Image(systemName: "plus.circle")
+                            .font(.system(size: 30, weight: .semibold, design: .rounded))
+                            
+                        Text("New Task")
+                            .font(.system(size: 24, weight: .bold, design: .rounded))
+                    })
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 15)
+                    .background(
+                        LinearGradient(colors: [Color.pink, Color.blue], startPoint: .leading, endPoint: .trailing)
+                            .clipShape(Capsule())
+                    )
+                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 8, x: 0.0, y: 4.0)
+                    
+                    // MARK: - TASKS
                     List {
                         ForEach(items) { item in
                             VStack(alignment: .leading){
@@ -113,6 +87,19 @@ struct ContentView: View {
                     .padding(.vertical, 0)
                     .frame(maxWidth: 640)
                 } //: VSTACK
+                
+                // MARK: - NEW TASK ITEM
+                if showNewTaskItem {
+                    BlankView()
+                        .onTapGesture {
+                            withAnimation {
+                                showNewTaskItem = false
+                            }
+                        }
+                    
+                    NewTaskItemView(isShowing: $showNewTaskItem)
+                }
+                
             } //: ZSTACK
             // iOS 16이상에서의 리스트 배경 지우는법
             .scrollContentBackground(.hidden)
