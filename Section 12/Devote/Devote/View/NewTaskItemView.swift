@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NewTaskItemView: View {
     // MARK: - PROPERTY
-    
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @Environment(\.managedObjectContext) private var viewContext
     @State private var task: String = ""
     // save저장 버튼을 눌렀을때 텍스트필드를 없애기 위해 사용하는 변수
@@ -50,7 +50,7 @@ struct NewTaskItemView: View {
                     .font(.system(size: 24, weight: .bold, design: .rounded))
                     .padding()
                     .background(
-                        Color(UIColor.systemGray6)
+                        isDarkMode ? Color(UIColor.tertiarySystemBackground) : Color(UIColor.secondarySystemBackground)
                     )
                     .cornerRadius(10)
                     .focused($nameIsFocused)
@@ -76,7 +76,7 @@ struct NewTaskItemView: View {
             .padding(.horizontal)
             .padding(.vertical, 20)
             .background(
-                Color.white
+                isDarkMode ? Color(UIColor.secondarySystemBackground) : Color.white
             )
             .cornerRadius(16)
             .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.65), radius: 24)
