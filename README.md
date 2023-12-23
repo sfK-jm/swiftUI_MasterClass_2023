@@ -20,7 +20,7 @@
 
 ## SECTION 10 AFRICA
 
-<img src="./Section_10/Africa/Africa/images/ContentView.png" width = "300px">
+<img src="./Section_10/Africa/Africa/Images/ContentView.png" width = "300px">
 
 ## SECTION 11 TOUCHDOWN
 
