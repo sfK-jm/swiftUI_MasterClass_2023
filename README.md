@@ -12,11 +12,11 @@
 
 ## SECTION 8 PINCH
 
-<img src="./section_08/Pinch/Pinch/Images/image1.png" width = "300px">
+<img src="./Section_08/Pinch/Pinch/Images/image1.png" width = "300px">
 
 ## SECTION 9 FRUCTUS
 
-<img src="./section_09/Fructus/Fructus/Images/ContentView.png" width = "300px">
+<img src="./Section_09/Fructus/Fructus/Images/ContentView.png" width = "300px">
 
 ## SECTION 10 AFRICA
 
